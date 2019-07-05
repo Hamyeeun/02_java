@@ -16,9 +16,11 @@ public class Hello {
 		// 자바 기본 출력 구문
 		// sysout -> ctrl + sace bar
 		System.out.println("안녕하세요, 자바!");
+		System.out.println("안녕하세요, 자바!");
 		
 		// 소스 편집 후 항상 저장하는 습관
 		// ctrl + s 단축키로 항상 저장
+		
 		
 		
 
