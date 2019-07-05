@@ -30,6 +30,11 @@ public class ByteTest {
 		
 		buffer = -128;
 		System.out.println("buffer=" + buffer);
+		
+		// 5. 값의 범위를 벗어나는 값을 저장하려는 시도
+		// Err : Type mismatch
+//		buffer = 128; 
+		
 
 	}
 
