@@ -44,6 +44,17 @@ public class ForTest {
 				System.out.printf("%2d x %2d =%4d\n", stage, table, (stage * table));
 			}
 		}
+		
+		// 3. 제곱표 출력 (배열, foreach 사용)
+		System.out.println("(3)=============================================");
+		
+		System.out.println("1 ~ 10 까지의 제곱표2");
+		
+		int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		
+		for (int num : numbers) {
+			System.out.printf("%2d x %2d = %3d%n", num, num, num * num);
+		}
 	}
 
 }
