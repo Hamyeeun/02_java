@@ -16,6 +16,8 @@ public class BestPitcher {
 		double[][] era = new double[3][5];
 		double min = 10.0;
 		double score;
+		int people = 0;
+		int team = 0;
 
 		// 각 팀별로 각 투수의 방어률 입력받아 배열에 저장한다.
 		System.out.println("1선발 2선발 3선발 4선발 5선발 방어률 입력");
@@ -27,19 +29,18 @@ public class BestPitcher {
 				System.out.println((idx + 1) + "번째 팀" + (idn + 1) + "번째 선수의 방어률은 : ");
 
 				score = scan.nextDouble();
-				
-				if(score < min) {
-					
-					min = score;
-					System.out.println("");
-					
-				}else {
-					
-				}
 
+				if (score < min) {
+
+					min = score;
+
+					people = (idn + 1);
+					team = (idx + 1);
+				}
 			}
 
 		}
+		System.out.printf("%n%d 번째 팀의 %d 번째 선수의 방어율이 %2.1f로 %n가장 낮은 방어율을 가진 최고의 피쳐이다.%n%n", team, people, min);
 	}
 
 }
