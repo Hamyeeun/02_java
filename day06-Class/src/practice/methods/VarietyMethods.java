@@ -1,5 +1,7 @@
 package practice.methods;
 
+import java.util.Scanner;
+
 /**
  * 메소드 작성 실습 클래스
  * 
@@ -58,6 +60,9 @@ public class VarietyMethods {
 	 * @param year : int
 	 * @param month : int
 	 */
+	public void birthYearMonth(String name, int year, int month) {
+		System.out.printf("%s는 %d년 %d월 생입니다.%n",name, year, month);
+	}
 
 	
 	
@@ -70,7 +75,15 @@ public class VarietyMethods {
 	 * printNineNineTable 을 디자인
 	 * @param stage : int
 	 */
-	
+	public void printNineNineTable(int stage) {
+		System.out.println("출력하고 싶은 단을 입력해 주세요 :");
+		//Scanner scan = new Scanner(System.in);
+		//stage = scan.nextInt();
+		System.out.printf("%d단%n",stage);
+		for (int idx = 1; idx < 10; idx++) {
+			System.out.printf("%d x %d = %d%n", stage, idx, stage * idx);
+		}
+	}
 	
 	
 	/**
@@ -81,8 +94,9 @@ public class VarietyMethods {
 	 * printNineNineTableArray 를 정의하시오.
 	 * @param stages : int[] 배열
 	 */
-	
-
+	public void printNineNineTableArray(int[] stage) {
+		
+	}
 	
 	
 	/**
