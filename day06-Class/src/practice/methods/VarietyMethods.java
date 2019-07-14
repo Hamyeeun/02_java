@@ -60,6 +60,7 @@ public class VarietyMethods {
 	 * @param year : int
 	 * @param month : int
 	 */
+	// 1번
 	public void birthYearMonth(String name, int year, int month) {
 		System.out.printf("%s는 %d년 %d월 생입니다.%n",name, year, month);
 	}
@@ -75,6 +76,7 @@ public class VarietyMethods {
 	 * printNineNineTable 을 디자인
 	 * @param stage : int
 	 */
+	// 2번
 	public void printNineNineTable(int stage) {
 		System.out.println("출력하고 싶은 단을 입력해 주세요 :");
 		//Scanner scan = new Scanner(System.in);
@@ -94,9 +96,14 @@ public class VarietyMethods {
 	 * printNineNineTableArray 를 정의하시오.
 	 * @param stages : int[] 배열
 	 */
-	public void printNineNineTableArray(int[] stage) {
-		
-	}
+	// 3번
+//	public void printNineNineTableArray(int[] stage) {
+//		Scanner scan = new Scanner(System.in);
+//		System.out.println("원하는 단을 입력해 주세요");
+//		for (int idx = 0; idx < 10; idx++) {
+//			
+//		}
+//	}
 	
 	
 	/**
@@ -117,6 +124,30 @@ public class VarietyMethods {
 	 * @param weight : double
 	 * @return String 비만도 판정 결과 문자열
 	 */
+	// 4번
+	public String calcBmi (double height, double weight) {
+		String bmi1;
+		double bmi2;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("당신의 몸무게와 키를 입력하세요");
+		weight = scan.nextDouble();
+		height = scan.nextDouble();
+		bmi2 = weight / ((height * height)/10000);
+		if(bmi2 > 40.0) {
+			bmi1 = "병적인 비만";
+		}else if(bmi2 > 27.5 && bmi2 <= 40.0) {
+			bmi1 = "비만";
+		}else if(bmi2 >= 23.0 && bmi2 <= 27.5) {
+			bmi1 = "과체중";
+		}else if(bmi2 >= 18.5 && bmi2 < 23.0) {
+			bmi1 = "정상";
+		}else if(bmi2 >= 15.0 && bmi2 < 18.5) {
+			bmi1 = "저체중";
+		}else{
+			bmi1 = "병적인 저체중";
+		}
+		return bmi1;
+	}
 	
 	/**
 	 * 입력된 두 정수 중에서 작은 수를 찾아 리턴하는 메소드
@@ -125,7 +156,20 @@ public class VarietyMethods {
 	 * @param input2
 	 * @return int 둘 중 작은 정수
 	 */
-
+	// 5번
+	public int min (int input1, int input2) {
+		int small;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("정수 2개를 입력하세요");
+		input1 = scan.nextInt();
+		input2 = scan.nextInt();
+		if (input1 > input2) {
+			small = input2;
+		}else {
+			small = input1;
+		}
+		return small;
+	}
 	
 	/**
 	 * 입력된 두 정수 중에서 큰 수를 찾아 리턴하는 메소드
@@ -134,6 +178,20 @@ public class VarietyMethods {
 	 * @param input2 : int
 	 * @return int 둘 중 큰 정수
 	 */
+	// 6번
+	public int max (int input1, int input2) {
+		int max;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("정수 2개를 입력하세요");
+		input1 = scan.nextInt();
+		input2 = scan.nextInt();
+		if (input1 > input2) {
+			max = input1;
+		}else {
+			max = input2;
+		}
+		return max;
+	}
 
 	
 	/**
@@ -143,7 +201,10 @@ public class VarietyMethods {
 	 * @param numbers : int[] (int 배열)
 	 * @return int[] 배열의 각 원소의 합
 	 */
-	
+	// 7번
+//	public int sumOfArray (int[] numbers) {
+//		
+//	}
 	
 	
 	/**
@@ -153,6 +214,10 @@ public class VarietyMethods {
 	 * @param numbers : int[] (int 배열)
 	 * @return int[] 배열의 각 원소의 평균 
 	 */
+	// 8번
+//	public int avgOfArray(int[] numbers) {
+//		
+//	}
 	
 	
 	
@@ -170,6 +235,16 @@ public class VarietyMethods {
 	 * @param x : int
 	 * @param y : int
 	 */	
+	// 9번
+	public void adder (char op, int x, int y) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("두 정수와 연산자를 입력하여 값을 구해보세요(plus연산만 가능)");
+		op = scan.next().charAt(0);
+		switch (op) {
+		case '+':
+			System.out.printf("%d + %d = %d입니다.", x, y, (x + y));
+		}
+	}
 
 
 
