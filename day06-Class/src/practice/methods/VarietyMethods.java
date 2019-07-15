@@ -43,7 +43,7 @@ public class VarietyMethods {
 	 * @param fah : double : 변환할 화씨 온도 값
 	 * @return 변환된 섭씨 온도 값
 	 */
-	public double fahToCel(double fah) {
+	public double fhaToCel(double fah) {
 		return 5.0 / 9.0 * (fah - 32);
 	}
 	
