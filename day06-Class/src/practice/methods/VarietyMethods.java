@@ -62,6 +62,7 @@ public class VarietyMethods {
 	 */
 	// 1번
 	public void birthYearMonth(String name, int year, int month) {
+		// 생년월일 출력문
 		System.out.printf("%s는 %d년 %d월 생입니다.%n",name, year, month);
 	}
 
@@ -78,10 +79,14 @@ public class VarietyMethods {
 	 */
 	// 2번
 	public void printNineNineTable(int stage) {
+		// 입력 설명문 출력
 		System.out.println("출력하고 싶은 단을 입력해 주세요 :");
+		// Scanner 사용시
 		//Scanner scan = new Scanner(System.in);
 		//stage = scan.nextInt();
+		//입력받은것이 무슨 단인지 출력
 		System.out.printf("%d단%n",stage);
+		//입력받은 단에 대한 구구단을 출력
 		for (int idx = 1; idx < 10; idx++) {
 			System.out.printf("%d x %d = %d%n", stage, idx, stage * idx);
 		}
@@ -126,13 +131,19 @@ public class VarietyMethods {
 	 */
 	// 4번
 	public String calcBmi (double height, double weight) {
+		// 필요 변수 추가 선언
 		String bmi1;
 		double bmi2;
+		// Scanner 선언, 초기화
 		Scanner scan = new Scanner(System.in);
+		// Scanner 입력 안내
 		System.out.println("당신의 몸무게와 키를 입력하세요");
+		// weight, height ==> Scanner 로 초기화
 		weight = scan.nextDouble();
 		height = scan.nextDouble();
+		// bmi 기준 공식 작성
 		bmi2 = weight / ((height * height)/10000);
+		// 범위 설정 후 초기화
 		if(bmi2 > 40.0) {
 			bmi1 = "병적인 비만";
 		}else if(bmi2 > 27.5 && bmi2 <= 40.0) {
@@ -146,6 +157,7 @@ public class VarietyMethods {
 		}else{
 			bmi1 = "병적인 저체중";
 		}
+		// 리턴값 
 		return bmi1;
 	}
 	
@@ -158,16 +170,22 @@ public class VarietyMethods {
 	 */
 	// 5번
 	public int min (int input1, int input2) {
+		// 최솟값 변수선언
 		int small;
+		// Scanner 변수 선언
 		Scanner scan = new Scanner(System.in);
+		// 입력 안내문
 		System.out.println("정수 2개를 입력하세요");
+		// input1, input2 Scanner로 초기화
 		input1 = scan.nextInt();
 		input2 = scan.nextInt();
+		// 언떤 변수가 작은지 비교
 		if (input1 > input2) {
 			small = input2;
 		}else {
 			small = input1;
 		}
+		// 리턴값 : 작은 값
 		return small;
 	}
 	
@@ -180,16 +198,22 @@ public class VarietyMethods {
 	 */
 	// 6번
 	public int max (int input1, int input2) {
+		// 큰 변수 선언
 		int max;
+		// Scanner 변수 선언, 초기화
 		Scanner scan = new Scanner(System.in);
+		// 입력 안내문
 		System.out.println("정수 2개를 입력하세요");
+		// input1, input2 Scanner로 초기화
 		input1 = scan.nextInt();
 		input2 = scan.nextInt();
+		// 큰 변수 무엇인지 비교 및 max 변수 초기화
 		if (input1 > input2) {
 			max = input1;
 		}else {
 			max = input2;
 		}
+		// 리턴 max값
 		return max;
 	}
 
@@ -215,9 +239,20 @@ public class VarietyMethods {
 	 * @return int[] 배열의 각 원소의 평균 
 	 */
 	// 8번
-//	public int avgOfArray(int[] numbers) {
-//		
-//	}
+	public double avgOfArray(int[] numbers) {
+		// 1. 배열원소의 총합
+		// (1) 총합 변수 선언, 초기화
+		int sum = 0;
+		// (2) 평균 변수 선언, 초기화
+		double average;
+		// (3) 배열의 원소의 합을 구함 ==> foreach
+		for(int num : numbers) {
+			sum+=num;
+		}
+		// 2. 총함/ 원소의 갯수 ==> 평균
+		average = (double)sum /numbers.length;
+		return average;
+	}
 	
 	
 	
