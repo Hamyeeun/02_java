@@ -44,12 +44,12 @@ public class LectureTestByArray {
 		erasers[1] = new Eraser(3.5, 12.0, 5.5, 3, "흰색", "오른쪽");
 
 		// 마커 사용
-		for (Marker mark : markers) {
-			mark.use();
+		for (Marker marker : markers) {
+			marker.use();
 		}
 		// 지우개 사용
-		for (Eraser erase : erasers) {
-			erase.eraser();
+		for (Eraser eraser : erasers) {
+			eraser.eraser();
 		}
 		// 지우개 벗겨내디
 		for (Eraser peelof : erasers) {
