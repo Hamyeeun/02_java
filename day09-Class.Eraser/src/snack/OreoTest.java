@@ -9,7 +9,7 @@ package snack;
  * foreach를 사용해서
  * oreoBox에서 모든 쿠키의 상태를 출력
  * 
- * for를 사용하여 모든 쿠키의 크림을 바닐아로 변경
+ * for를 사용하여 모든 쿠키의 크림을 바닐라로 변경
  * 
  * foreach 사용해서 모든 쿠키의 크림 변경 상태 확인을 위한 출력
  * @author Administrator
@@ -22,14 +22,30 @@ public class OreoTest {
 		// Oreo 배열 선언
 		Oreo[] oreoBox;
 		
-//		// 클래스 선언
-//		Oreo oreo = new oreo
-		
 		// 2. 초기화
 		// 배열 초기화
 		oreoBox = new Oreo[3];
 		
+		oreoBox[0] = new Oreo("딸기", 5.1, 3.0);
+		oreoBox[1] = new Oreo("말차", 5.1, 3.0);
+		oreoBox[2] = new Oreo("바닐라", 5.1, 3.0);
 		
+		// 모든 쿠키의 상태 출력
+		for (Oreo status : oreoBox) {
+			status.print();
+		}
+		
+		System.out.println("===========크림 변경 후=============");
+		
+		// 모든 쿠키 바닐라 맛으로 변경
+		for(int idx = 0; idx < oreoBox.length; idx++) {
+			oreoBox[idx] = new Oreo("바닐라", 5.1, 3.0);
+		}
+		
+		// 맛 변경 후 모든 쿠키의 상태 출력 
+		for (Oreo status : oreoBox) {
+			status.print();
+		}
 	}
 
 }
