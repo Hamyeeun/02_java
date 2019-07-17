@@ -97,8 +97,8 @@ public class Account {
 	 */
 	public String withdraw(int amount) {
 		String balances;
-		balance -= amount;
 		if(balance >= amount) {
+			balance -= amount;
 			balances = amount + "출금되었습니다. 잔액은" + balance + "입니다";
 		}else {
 			balances = "잔액이 부족합니다.";
