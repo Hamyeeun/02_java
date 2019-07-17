@@ -26,38 +26,41 @@ public class LectureTestByArray {
 
 	public static void main(String[] args) {
 		// 선언
-		Marker[] markers = new Marker[4];
-		Eraser[] erasers = new Eraser[2];
+		Marker[] markers;
+		Eraser[] erasers;
 
+		// 배열 크기 초기화
+		markers = new Marker[4];
+		erasers = new Eraser[2];
 
 		// 마커 클래스 초기화
 		markers[0] = new Marker("red", true, true);
 		markers[1] = new Marker("green", true, false);
 		markers[2] = new Marker("blue", true, true);
 		markers[3] = new Marker("black", false, false);
-		
+
 		// 지우개 클래스 초기화
 		erasers[0] = new Eraser(3.5, 12.0, 5.5, 3, "흰색", "왼쪽");
 		erasers[1] = new Eraser(3.5, 12.0, 5.5, 3, "흰색", "오른쪽");
-		
+
 		// 마커 사용
-		for(Marker mark : markers){
+		for (Marker mark : markers) {
 			mark.use();
 		}
 		// 지우개 사용
-		for(Eraser erase : erasers){
+		for (Eraser erase : erasers) {
 			erase.eraser();
 		}
 		// 지우개 벗겨내디
-		for(Eraser peelof : erasers) {
+		for (Eraser peelof : erasers) {
 			peelof.peel();
 		}
 		// 지우개 상태 출력
-		for(Eraser status : erasers) {
+		for (Eraser status : erasers) {
 			status.print();
 		}
 		// 마커 상태 출력
-		for(Marker status : markers) {
+		for (Marker status : markers) {
 			status.print();
 		}
 	}
