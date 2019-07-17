@@ -26,8 +26,8 @@ public class OreoTest {
 		// 배열 초기화
 		oreoBox = new Oreo[3];
 		
-		oreoBox[0] = new Oreo("딸기", 5.1, 3.0);
-		oreoBox[1] = new Oreo("말차", 5.1, 3.0);
+		oreoBox[0] = new Oreo("딸기", 4.3, 2.0);
+		oreoBox[1] = new Oreo("말차", 3.1, 2.0);
 		oreoBox[2] = new Oreo("바닐라", 5.1, 3.0);
 		
 		// 모든 쿠키의 상태 출력
@@ -39,7 +39,7 @@ public class OreoTest {
 		
 		// 모든 쿠키 바닐라 맛으로 변경
 		for(int idx = 0; idx < oreoBox.length; idx++) {
-			oreoBox[idx] = new Oreo("바닐라", 5.1, 3.0);
+			oreoBox[idx].changeCream("바닐라");
 		}
 		
 		// 맛 변경 후 모든 쿠키의 상태 출력 
