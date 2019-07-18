@@ -174,7 +174,8 @@ public class Book {
 	 * void print() : 책의 정보를 출력하는 메소드
 	 */
 	public void print() {
-		
+		System.out.printf("일련번호 : %d, ISBN : %s, 책 제목: %s, 저자: %s, 출판사: %s, 페이지 수 : %d, 가격: %d, 재고수량: %d%n"
+				, sequence, isbn, title, author, company, totalPage, price, quantity);
 	}
 	
 	/**
@@ -182,14 +183,16 @@ public class Book {
 	 * @param amount
 	 */
 	public void buy(int amount) {
-		
+		this.quantity += amount;
+		System.out.printf("책의 재고는 %d 입니다.", quantity);
 	}
 	/**
 	 * void sell(int amount): amount 만큼 책의 재고를 줄이는 메소드
 	 * @param amount
 	 */
 	public void sell(int amount) {
-		
+		this.quantity -= amount;
+		System.out.printf("책의 재고는 %d 입니다.", quantity);
 	}
 	
 }
