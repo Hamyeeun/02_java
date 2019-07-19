@@ -11,7 +11,7 @@ package book;
 public class BookShelf {
 
 	// 멤버변수
-	Book[] books;
+	Book[] books; // 영구적으로 하고 싶다면 database넣으면 됨. 
 	
 	BookShelf() {
 		books = new Book[0];

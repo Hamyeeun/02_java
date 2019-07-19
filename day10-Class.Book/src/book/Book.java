@@ -176,6 +176,8 @@ public class Book {
 	public void print() {
 		System.out.printf("일련번호 : %d, ISBN : %s, 책 제목: %s, 저자: %s, 출판사: %s, 페이지 수 : %d, 가격: %d, 재고수량: %d%n"
 				, sequence, isbn, title, author, company, totalPage, price, quantity);
+//		String message = "책 정보[일련번호 : %d, ISBN : %s, 책 제목: %s, 저자: %s, 출판사: %s, 페이지 수 : %d, 가격: %d, 재고수량: %d]%n";
+//		System.out.println(message, sequence, isbn, title, author, company, totalPage, price, quantity);
 	}
 	
 	/**
