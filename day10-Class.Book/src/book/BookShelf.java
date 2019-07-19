@@ -66,7 +66,7 @@ public class BookShelf {
 //			} else {
 //				// 4. 폐기할 인덱스가 배열 중간일 때 삭제
 //				// (1) 삭제할 책 앞쪽의 책 정보는 같은 인덱스로 복사
-//				for (int idx = 0; idx < index - 1; idx++) {
+//				for (int idx = 0; idx < index; idx++) {
 //					newBooks[idx] = books[idx];
 //				}
 //				// (2) 삭제할 책 뒤쪽의 남는 책 정보는 현재인덱스 -1 으로 복사하기
