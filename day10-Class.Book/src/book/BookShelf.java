@@ -45,7 +45,7 @@ public class BookShelf {
 		// book 객체의 sequence 가 같으면 같은 책으로 판단해서
 		// 삭제
 		// 폐기 안하고 남는 책을 유지할 새 배열
-		Book[] newBooks = null;
+		Book[] newBooks;
 		
 		// 1. 폐기할 책이 위치하는 인덱스를 찾기
 		int index = findBookIndex(book);
@@ -55,23 +55,40 @@ public class BookShelf {
 		if (index > -1) {
 			// 3. 폐기 안할 책을 유지할 
 			//    새 배열을 지금 배열 크기 - 1 크기로 생성
-			newBooks = new Book[books.length -1];
+			newBooks = new Book[books.length - 1];
 			
 			// 5. 폐기할 인덱스가 배열 끝일 때
 			//    폐기할 책 인덱스 앞쪽까지만 새 배열에 복사
-			if (index == books.length - 1) {
-				for (int idx = 0; idx < newBooks.length; idx++) {
-					newBooks[idx] = books[idx];
-				}
-			} else {
-				// 4. 폐기할 인덱스가 배열 중간일 때 삭제
+//			if (index == books.length - 1) {
+//				for (int idx = 0; idx < newBooks.length; idx++) {
+//					newBooks[idx] = books[idx];
+//				}
+//			} else {
+//				// 4. 폐기할 인덱스가 배열 중간일 때 삭제
+//				// (1) 삭제할 책 앞쪽의 책 정보는 같은 인덱스로 복사
+//				for (int idx = 0; idx < index - 1; idx++) {
+//					newBooks[idx] = books[idx];
+//				}
+//				// (2) 삭제할 책 뒤쪽의 남는 책 정보는 현재인덱스 -1 으로 복사하기
+//				for (int idx = index; idx < newBooks.length; idx++) {
+//					newBooks[idx] = books[idx + 1];
+//				}
+//			}
+			//강사님 버전 4, 5
+			if(index < books.length - 1) {
+				// 4번
 				// (1) 삭제할 책 앞쪽의 책 정보는 같은 인덱스로 복사
-				for (int idx = 0; idx < index - 1; idx++) {
+				for (int idx = 0; idx < index; idx++) {
 					newBooks[idx] = books[idx];
 				}
 				// (2) 삭제할 책 뒤쪽의 남는 책 정보는 현재인덱스 -1 으로 복사하기
 				for (int idx = index; idx < newBooks.length; idx++) {
 					newBooks[idx] = books[idx + 1];
+				}
+			}else {
+				// 5번
+				for (int idx = 0; idx < books.length - 1; idx++) {
+					newBooks[idx] = books[idx];
 				}
 			}
 		
@@ -99,7 +116,13 @@ public class BookShelf {
 		// 책 1권의 정보를 리턴
 		return findBook(book);
 	}
-	
+	/**
+	 * 매개변수 전달된 책 정보와
+	 * 일치하는 일련번호를 가진 책(책 배열 : books 에 있는)을
+	 * 찾아서 배열에 안에 들어있는 책을 리턴
+	 * @param book
+	 * @return
+	 */
 	private Book findBook(Book book) {
 		Book findBook = null;
 		for (int idx = 0; idx < books.length; idx++) {
@@ -111,7 +134,11 @@ public class BookShelf {
 		}
 		return findBook;
 	}
-	
+	/**
+	 * 
+	 * @param book
+	 * @return
+	 */
 	private int findBookIndex(Book book) {
 		int index = -1;
 		for (int idx = 0; idx < books.length; idx++) {
@@ -125,7 +152,10 @@ public class BookShelf {
 	}
 	
 
-	// 전체 책 목록을 얻기
+	// 전체 책 목록을 얻기 : getAllBooks()
+	public Book[] getAllBooks() {
+		return this.books;
+	}
 	
 
 	
