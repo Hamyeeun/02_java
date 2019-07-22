@@ -10,7 +10,7 @@ public class PointTest2 {
 		//Point 배열 선언, 초기화
 		Point[] points = {new Point(10,1)
 				        , new Point(3, 4)
-				        , new NamedPoint("O", 0, 0)};
+				        , new NamedPoint("O", 0, 0)}; // 다형성
 		
 		
 		// 사용
