@@ -8,6 +8,7 @@ public class Student extends Person {
 	Student(String id, String name, int age){
 		super(id, name, age);
 	}
+	
 	Student(String id, String name, int age, String major){
 		this(id, name, age);
 		this.major = major;
@@ -17,6 +18,7 @@ public class Student extends Person {
 	public String getMajor() {
 		return major;
 	}
+	
 	public void setMajor(String major) {
 		this.major = major;
 	}

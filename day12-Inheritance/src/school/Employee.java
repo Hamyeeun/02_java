@@ -8,6 +8,7 @@ public class Employee extends Person {
 	 Employee(String id, String name, int age){
 		 super(id, name, age);
 	 }
+	 
 	Employee(String id, String name, int age, String dept){
 		 super(id, name, age);
 		 this.dept = dept;
@@ -17,6 +18,7 @@ public class Employee extends Person {
 	public String getDept() {
 		return dept;
 	}
+	
 	public void setDept(String dept) {
 		this.dept = dept;
 	}

@@ -8,6 +8,7 @@ public class Teacher extends Person {
 	Teacher(String id, String name, int age){
 		super(id, name, age);
 	}
+	
 	Teacher(String id, String name, int age, String subject){
 		super(id, name, age);
 		this.subject = subject;
@@ -17,6 +18,7 @@ public class Teacher extends Person {
 	public String getSubject() {
 		return subject;
 	}
+	
 	public void setSubject(String subject) {
 		this.subject = subject;
 	}

@@ -10,14 +10,17 @@ public abstract class Person {
 	public Person() {
 		
 	}
+	
 	public Person(String id) {
 		this();
 		this.id = id;
 	}
+	
 	public Person(String id, String name) {
 		this(id);
 		this.name = name;
 	}
+	
 	public Person(String id, String name, int age) {
 		this(id, name);
 		this.age = age;
@@ -27,6 +30,7 @@ public abstract class Person {
 	public String getId() {
 		return id;
 	}
+	
 	public void setId(String id) {
 		this.id = id;
 	}
@@ -34,6 +38,7 @@ public abstract class Person {
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -41,6 +46,7 @@ public abstract class Person {
 	public int getAge() {
 		return age;
 	}
+	
 	public void setAge(int age) {
 		this.age = age;
 	}
