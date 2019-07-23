@@ -37,7 +37,7 @@ package product;
  * 
  * 각 생성자 선언할 때, 문서주석 달 것
  * 
- * 각 메소드 선언할 때, ㅁ[소드 설명을 문서 주석으로 달 것
+ * 각 메소드 선언할 때, 메소드 설명을 문서 주석으로 달 것
  * 
  * 테스트는 아직 작성하지 말것
  *     
@@ -130,7 +130,7 @@ public class Product {
 	 * @return
 	 */
 	public int discount(double percentage) {
-		return price * (int)percentage;
+		return price - (int)((double)price * percentage);
 	}
 	
 	/**
@@ -141,7 +141,12 @@ public class Product {
 	 * @param amount
 	 */
 	public void sell(int amount) {
-		
+		if (quantity - amount > 0) {
+			quantity -= amount;
+			System.out.printf("남은 재고수량 : %d%n", quantity);
+		}else {		
+			System.out.println("재고수량이 없습니다.\n");
+		}
 	}
 	
 	/**
@@ -151,7 +156,72 @@ public class Product {
 	 * @param amount
 	 */
 	public void buy(int amount) {
-		
+		quantity += amount;
+		System.out.printf("남은 재고수량 : %d%n", quantity);
 	}
+	
 	// 4. 접근자, 수정자
+	/**
+	 * pcode의 접근자
+	 * @return
+	 */
+	public String getPcode() {
+		return pcode;
+	}
+	
+	/**
+	 * pcode의 수정자
+	 * @param pcode
+	 */
+	public void setPcode(String pcode) {
+		this.pcode = pcode;
+	}
+	
+	/**
+	 * pname의 접근자
+	 * @return
+	 */
+	public String getPname() {
+		return pname;
+	}
+	
+	/**
+	 * pname의 수정자
+	 * @param pname
+	 */
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+	
+	/**
+	 * price의 접근자
+	 * @return
+	 */
+	public int getPrice() {
+		return price;
+	}
+	
+	/**
+	 * price의 수정자
+	 * @param price
+	 */
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
+	/**
+	 * quantity의 접근자
+	 * @return
+	 */
+	public int getQuantity() {
+		return quantity;
+	}
+	
+	/**
+	 * quantity의 수정자
+	 * @param quantity
+	 */
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 }
