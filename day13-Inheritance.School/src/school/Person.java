@@ -52,9 +52,9 @@ public abstract class Person {
 	
 	/**
 	 * 전체 필드를 초기화하는 생성자
-	 * @param id
-	 * @param name
-	 * @param age
+	 * @param id   : 시스템에 등록되는 아이디
+	 * @param name : 학교 구성원의 이름
+	 * @param age  : 학교구성원의 나이
 	 */
 	public Person(String id, String name, int age) {
 		this(id, name);
