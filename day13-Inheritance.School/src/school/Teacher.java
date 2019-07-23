@@ -5,13 +5,26 @@ public class Teacher extends Person {
 	private String subject;
 	
 	// 생성자
-	Teacher(String id, String name, int age){
-		super(id, name, age);
+	// (1) 기본생성자
+	public Teacher() {
+		
 	}
 	
-	Teacher(String id, String name, int age, String subject){
+	// (2) 매개변수를 받는 생성자
+	public Teacher(String subject) {
+		this.subject = subject;
+	}
+	
+	public Teacher(String id, String name, int age, String subject){
 		super(id, name, age);
 		this.subject = subject;
+	}
+
+	// 메소드
+	@Override
+	public String toString() {
+		String teacherStr = String.format(", 과목:%s", subject);
+		return String.format("과목[%s%s]", super.toString(), teacherStr);
 	}
 	
 	// 접근자, 수정자
@@ -23,10 +36,5 @@ public class Teacher extends Person {
 		this.subject = subject;
 	}
 	
-	// 메소드
-	@Override
-	public String toString() {
-		return subject + super.toString();
-	}
 	
 }
