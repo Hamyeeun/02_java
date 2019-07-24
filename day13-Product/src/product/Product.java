@@ -26,6 +26,7 @@ package product;
  *    => 매장에서 판매(출고)되어
  *    => 재고수량(quantity)이 amount 만큼 줄어들도록 반영
  *    => 재고수량이 0보다 작아질 수 없도록 제한
+ *    => 판매하려는 수량(amount)가 재고보다 클 수 없도록 처리
  *    
  * buy(int amount) : void
  *    => 매장에 입고되어 재고수량(quantity)이
@@ -141,7 +142,7 @@ public class Product {
 	 * @param amount
 	 */
 	public void sell(int amount) {
-		if (quantity - amount > 0) {
+		if (quantity > amount) {
 			quantity -= amount;
 			System.out.printf("남은 재고수량 : %d%n", quantity);
 		}else {		
