@@ -142,7 +142,7 @@ public class Product {
 	 * @param amount
 	 */
 	public void sell(int amount) {
-		if (quantity > amount) {
+		if (quantity >= amount) {
 			quantity -= amount;
 			System.out.printf("남은 재고수량 : %d%n", quantity);
 		}else {		
