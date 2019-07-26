@@ -1,5 +1,7 @@
 package book;
 
+import java.util.Arrays;
+
 /**
  * Book 여러개가 꼽혀있어
  * 책 객체 여러개를 한번에 저장하고 
@@ -42,27 +44,45 @@ public class BookShelf {
 	 *         1 : 새 책 정보 1건이 성공적으로 추가된 경우
 	 */
 	public int add(Book book) {
-		// 현재 books 보다 길이가 1큰 배열을 새로 만든다.
-		// newBooks
-		int result = 0;
+		// 강사님 ver add
+		// 1. 리턴값 저장 변수 선언, 초기화
+		int addCount = 0;
+
+		// 3. 로직 전개
+		// 추가하려는 책이 존재하는지 판단
 		if (!isExists(book)) {
-			Book[] newBooks = new Book[books.length + 1];
+			// 이미 존재하는 배열 + 1 크기로 복사
+			this.books = Arrays.copyOf(books, books.length + 1);
 
-			// books 의 모든 책 내용을 새로 생성한 1칸 큰 배열에
-			// 앞쪽부터 복사
-			for (int idx = 0; idx < books.length; idx++) {
-				newBooks[idx] = books[idx];
-			}
-
-			// 매개변수로 넘겨진 book 은 마지막 새로 생긴 칸에 저장
-			newBooks[newBooks.length - 1] = book;
-//			result = 1;
-			result++;
-			// 이 클래스의 books 멤버변수에 새로만든 newBooks 저장
-			this.books = newBooks;
+			// 1 늘어난 배열 마지막 자리에 새 book
+			// (메게변수로 넘어온 것) 저징
+			this.books[books.length - 1] = book;
+			addCount++;
 		}
-		// 리턴 값(추가 성공 : 1, 실패 : 0)
-		return result;
+		// 2. 리턴 값 저장 변수 리턴 구문
+		return addCount;	
+		
+//		// 현재 books 보다 길이가 1큰 배열을 새로 만든다.
+//		// newBooks
+//		int result = 0;
+//		if (!isExists(book)) {
+//			Book[] newBooks = new Book[books.length + 1];
+//
+//			// books 의 모든 책 내용을 새로 생성한 1칸 큰 배열에
+//			// 앞쪽부터 복사
+//			for (int idx = 0; idx < books.length; idx++) {
+//				newBooks[idx] = books[idx];
+//			}
+//
+//			// 매개변수로 넘겨진 book 은 마지막 새로 생긴 칸에 저장
+//			newBooks[newBooks.length - 1] = book;
+////			result = 1;
+//			result++;
+//			// 이 클래스의 books 멤버변수에 새로만든 newBooks 저장
+//			this.books = newBooks;
+//		}
+//		// 리턴 값(추가 성공 : 1, 실패 : 0)
+//		return result;
 	}
 	
 	// 책장에서 책을 제거 : void : remove(Book book)
@@ -226,14 +246,24 @@ public class BookShelf {
 	 *          
 	 */
 	private boolean isExists(Book book) {
-		boolean result = false;
-		for (int idx = 0; idx < books.length; idx++) {
-			if(books[idx].equals(book)) {
-				result = true;
+		// 리턴 값이 있는 메소드의 경우
+		// 리턴값을 저장할 변수를 선언, 초기화
+		boolean exists = false;
+//		for (int idx = 0; idx < books.length; idx++) {
+//			if(books[idx].equals(book)) {
+//				exists = true;
+//				break;
+//			}
+//		}
+		
+		for(Book findBook : books) {
+			if (findBook.equals(book)) {
+				exists = true;
 				break;
 			}
 		}
-		return result;
+		// 리턴 구문은 메소드 종료 직전 1번만 하는 습관 들이세요.
+		return exists;
 	}
 	
 

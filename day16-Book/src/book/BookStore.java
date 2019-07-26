@@ -54,7 +54,7 @@ public class BookStore {
 	
 	// (5) 우리 서점에서 판매하는 모든 책의 목록을 
 	//     매니저에게 조회해 달라고 부탁함.
-	public Book[] getAllBooks() {
-		return manager.getAllBooks();
+	public void getAllBooks() {
+		manager.getAllBooks();
 	}
 }

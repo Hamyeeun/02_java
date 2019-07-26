@@ -1,4 +1,8 @@
 package book;
+
+import book.resp.MessageResp;
+import book.resp.Response;
+
 /**
  * 책장(BookShelf)을 사용하는  북매니저(BookManager)나타내는 클래스
  * -----------------------------------------------------
@@ -25,6 +29,8 @@ public class BookManager {
 	// 멤버변수 선언부
 	private BookShelf bookShelf;
 	
+	// 매니저가 어떤 작업 후에 어떻게 응답해야 할지를 나타내는 타입
+	private Response response;
 	// 2. 생성자 선언부
 	// (1) 기본생성자 명시
 	public BookManager(){
@@ -40,7 +46,16 @@ public class BookManager {
 	// (1) 메니저는 책 한권을 책 한권을 책장에 가져가서
 	//     새로 꼽을 수 있다.
 	public void add(Book book) {
-		this.bookShelf.add(book);
+		int addCount = this.bookShelf.add(book);
+		String message;
+		response = new MessageResp();
+		
+		if(addCount > 0) {
+			message = String.format(book.toString() + "%d 건이 추가되었습니다" + addCount);
+		}else {
+			message = String.format(book.toString() + "가 이미 존재합니다.");
+		}
+		response.response(message);
 	}
 	
 	// (2) 매니저는 책장에가서 더 이상 팔지 않을
@@ -63,7 +78,8 @@ public class BookManager {
 	
 	// (5) 매니저는 서점에서 판매되고 있는 책의 목록을
 	//     보여줄 수 있다. 조회할 수 있다.
-	public Book[] getAllBooks() {
-		return this.bookShelf.getAllBooks();
+	public void getAllBooks() {
+		response = new ListResp();
+		response.response(bookShelf.getAllBooks());
 	}
 }
